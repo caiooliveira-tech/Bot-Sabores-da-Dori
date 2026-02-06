@@ -133,6 +133,13 @@ app.post('/webhook', async (req, res) => {
 /**
  * Health check endpoint
  */
+
+app.post('/', async (req, res) => {
+    // Reutiliza a mesma lógica do /webhook
+    req.url = '/webhook';
+    app.handle(req, res);
+});
+
 app.get('/', (req, res) => {
     res.json({
         status: 'online',

@@ -82,9 +82,7 @@ class EvolutionAPIClient {
 
       const response = await this.client.post(`/message/sendText/${this.instanceName}`, {
         number: formattedNumber,
-        textMessage: {
-          text: text
-        }
+        text: text
       });
 
       console.log(`[${new Date().toISOString()}] Mensagem enviada com sucesso`);

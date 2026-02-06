@@ -63,10 +63,10 @@ app.post('/webhook', async (req, res) => {
         }
 
         // Ignorar mensagens enviadas pelo próprio bot
-        // if (key.fromMe) {
-        //     console.log(`[${new Date().toISOString()}] ⏭️ Ignorando mensagem própria`);
-        //     return;
-        // }
+        if (key.fromMe) {
+            console.log(`[${new Date().toISOString()}] ⏭️ Ignorando mensagem própria`);
+            return;
+        }
 
         // Extrair número do remetente
         const remoteJid = key.remoteJid;
